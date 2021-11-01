@@ -2,7 +2,6 @@ package edu.knoldus
 trait Set[A <: Ordered[A]] {
   def incl(element: A): Set[A]
   def contains(value: A): Boolean
-  abstract class SetTree
 }
 class EmptySet[A<:Ordered[A]] extends Set[A]{
   def incl(element: A): Set[A] =new NonEmptySet(element, new EmptySet[A], new EmptySet[A])
@@ -20,8 +19,6 @@ class NonEmptySet[A<:Ordered[A]](element:A,left:Set[A],right:Set[A])extends Set[
     else this
   }
 }
-
-
 case class number(element:Int) extends Ordered[number]{
   def compare(that: number): Int =
     if (this.element < that.element) -1
