@@ -1,13 +1,6 @@
 package edu.knoldus
 import org.scalatest.flatspec.AnyFlatSpec
 
-//case class number(element:Int) extends Ordered[number]{
-//  def compare(that: number): Int =
-//    if (this.element < that.element) -1
-//    else if (this.element > that.element) 1
-//    else 0
-//}
-
 class SetTest extends AnyFlatSpec{
   var obj=new EmptySet[number]
   var obj1=new NonEmptySet[number](number(5),obj.incl(number(4)),obj.incl(number(1)))
@@ -24,8 +17,6 @@ class SetTest extends AnyFlatSpec{
   "condition" should "check weather non empty set has value 5 "in{
     assert(obj1.contains(number(5)))
   }
-
-
 
 }
 
